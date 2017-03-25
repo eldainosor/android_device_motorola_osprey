@@ -14,10 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/osprey/full_osprey.mk)
-
-# Inherit some common aosp stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, device/motorola/osprey/device.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 720
@@ -29,3 +26,5 @@ PRODUCT_NAME := aosp_osprey
 PRODUCT_BRAND := Motorola
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := osprey
+
+$(call inherit-product-if-exists, vendor/motorola/osprey/osprey-vendor.mk)
